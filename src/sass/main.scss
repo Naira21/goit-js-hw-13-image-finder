@@ -6,8 +6,12 @@
 // Стили для файла с примером HTML-фрагмента
 @import './example';
 
-.load {
-  width: 50px;
+.search {
+  width: 100px;
   height: 35px;
-  color: aquamarine;
+  color: black;
+}
+
+.load-more {
+  background-color: burlywood;
 }
