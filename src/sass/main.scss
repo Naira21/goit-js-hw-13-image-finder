@@ -6,6 +6,22 @@
 // Стили для файла с примером HTML-фрагмента
 @import './example';
 
+* {
+  font-family: monospace;
+  text-align: center;
+}
+
+.title {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.search-form {
+  border-radius: 10px;
+  border-color: cadetblue;
+  padding: 15px 10px;
+}
+
 .search {
   width: 100px;
   height: 35px;
@@ -14,4 +30,35 @@
 
 .load-more {
   background-color: burlywood;
+  height: 30px;
+  width: 100px;
+}
+
+.gallery-item {
+  list-style: none;
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.photo-card {
+  border: 1px solid rgb(168, 150, 150);
+  margin: 15px;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+}
+
+.stats-item {
+  margin-left: 20px;
+  display: grid;
+  color: rgb(63, 62, 62);
+}
+
+.material-icons {
+  padding-bottom: 5px;
+  color: black;
 }

@@ -9,7 +9,7 @@ const galleryList = document.querySelector('.gallery');
 // console.log(searchButton);
 
 form.addEventListener('submit', onSearch);
-// searchButton.addEventListener('click', clickLoadBtn);
+// searchButton.addEventListener('submit', onSearch);
 loadButton.addEventListener('click', clickLoadBtn);
 
 
@@ -26,37 +26,16 @@ async function onSearch(e) {
   const data = await newApiSearch.fetchImages(searchProps.searchQuery);
 
   if (data.length === 0) {
-    onError();
-  }
-  renderCardMarkup(data);
+    console.log('Error! Check your request');;
+  } renderCardMarkup(data);
 
-  const element = document.getElementById('.my-element-selector');
-  element.scrollIntoView({
+  loadButton.scrollIntoView({
     behavior: 'smooth',
     block: 'end',
   });
-
-
 }
 
-
-// async function onSearch(e) {
-//   e.preventDefault();
-//   newApiSearch.resetPage();
-//   clearGalleryResult();
-
-
-//   searchProps.searchQuery = e.target.query.value;
-//   const data = await newApiSearch.fetchImages(searchProps.searchQuery);
-
-//   if (data.length === 0) {
-//     onError();
-//   }
-//   renderCardMarkup(data);
-// }
-
 async function clickLoadBtn() {
-//  newApiSearch.fetchImages().then(renderCardMarkup());  
   newApiSearch.increment();
   const data = await newApiSearch.fetchImages(searchProps.searchQuery);
   renderCardMarkup(data);
@@ -68,12 +47,7 @@ function renderCardMarkup(data) {
 }
 
 function clearGalleryResult() {
-  galleryList.innerHTML = '';
-  
+  galleryList.innerHTML = '';  
 }
 
-function onError() {
-  error({
-    text: 'Incorrect query! Try again'
-  })
-}
+
