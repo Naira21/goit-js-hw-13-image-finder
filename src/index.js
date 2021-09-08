@@ -36,18 +36,15 @@ async function onSearch(e) {
   if (data.length > 11) {
     loadButton.style.visibility = 'visible';
   }
-  
-  loadButton.scrollIntoView({
-    behavior: 'smooth',
-    block: 'end',
-  });
+  handleButtonClick();
 }
 
 async function clickLoadBtn() {
   newApiSearch.increment();
   const data = await newApiSearch.fetchImages(searchProps.searchQuery);
-  renderCardMarkup(data); 
-  
+  renderCardMarkup(data);
+  handleButtonClick();
+ 
 };
 
 
@@ -61,3 +58,10 @@ function clearGalleryResult() {
 }
 
 
+//scroll
+function handleButtonClick() {
+  loadButton.scrollIntoView({
+    behavior: 'smooth',
+    block: 'end',
+  });
+}
